@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinar Ternak Mandiri - Informasi & Pemasaran Peternakan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+            color: white;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            font-size: 1.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?q=80&w=1200') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+            position: relative;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1b5e20;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 1.2rem;
+        }
+        .product-price {
+            font-weight: bold;
+            color: #2e7d32;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+        .btn-order {
+            display: inline-block;
+            width: 100%;
+            padding: 0.6rem;
+            background-color: #25d366;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+        .btn-order:hover {
+            background-color: #128c7e;
+        }
+        .about-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 3rem;
+        }
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                margin-top: 1rem;
+            }
+            nav a {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sinar Ternak Mandiri</h1>
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#produk">Katalog Produk</a>
+            <a href="#tentang">Tentang Kami</a>
+        </nav>
+    </header>
+
+    <section id="beranda" class="hero">
+        <div class="hero-content">
+            <h2>Pusat Produk & Pakan Peternakan Berkualitas</h2>
+            <p>Menyediakan pakan fermentasi, bibit ternak unggul, dan hasil olahan peternakan secara transparan dan mudah diakses.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="produk">
+            <h2 class="section-title">Katalog Produk Kami</h2>
+            <div class="products-grid">
+                
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1595246140625-573b715d11dc?q=80&w=400" alt="Pakan Fermentasi">
+                    <div class="product-info">
+                        <h3>Pakan Fermentasi Sapi/Kambing</h3>
+                        <p>Pakan lengkap tinggi protein, meningkatkan bobot ternak secara optimal.</p>
+                        <div class="product-price">Rp 85.000 / karung (50kg)</div>
+                        <button class="btn-order" onclick="pesanWhatsApp('Pakan Fermentasi Sapi/Kambing')">Pesan via WhatsApp</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?q=80&w=400" alt="Telur Ayam Fresh">
+                    <div class="product-info">
+                        <h3>Telur Ayam Ras Fresh (1 Rak)</h3>
+                        <p>Dipanen segar setiap hari langsung dari kandang peternakan sendiri.</p>
+                        <div class="product-price">Rp 52.000 / rak</div>
+                        <button class="btn-order" onclick="pesanWhatsApp('Telur Ayam Ras Fresh')">Pesan via WhatsApp</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?q=80&w=400" alt="Susu Sapi Murni">
+                    <div class="product-info">
+                        <h3>Susu Sapi Murni Pasturisasi (1 L)</h3>
+                        <p>100% susu murni tanpa pengawet, diproses secara higienis.</p>
+                        <div class="product-price">Rp 18.000 / liter</div>
+                        <button class="btn-order" onclick="pesanWhatsApp('Susu Sapi Murni 1L')">Pesan via WhatsApp</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="tentang" class="about-section">
+            <h2 class="section-title">Tentang Sinar Ternak Mandiri</h2>
+            <p><strong>Sinar Ternak Mandiri</strong> adalah usaha peternakan terpadu di Sidenreng Rappang yang berfokus pada penyediaan pakan ternak berkualitas dan hasil peternakan segar. Website ini dibangun untuk memudahkan para peternak lokal dan konsumen mendapatkan informasi produk dan melakukan pemesanan dengan transparan.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Sinar Ternak Mandiri | Proyek Sistem Informasi Bisnis - Universitas Muhammadiyah Sidenreng Rappang</p>
+    </footer>
+
+    <script>
+        function pesanWhatsApp(namaProduk) {
+            const nomorWA = "6281234567890"; // Ganti dengan nomor WhatsApp pemilik
+            const pesan = `Halo Sinar Ternak Mandiri, saya ingin memesan produk: *${namaProduk}*. Mohon informasi stok dan pengirimannya.`;
+            const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
